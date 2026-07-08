@@ -8,7 +8,7 @@ import logo from '../../assets/logo.png';
 
 function Header() {
 
-    const [menuOpen, setMenuOpen] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(true)
     const navigate = useNavigate()
 
     return <header className={styles.header}>
@@ -17,11 +17,15 @@ function Header() {
             <div className={styles.subContainer}>
                 <Link to="/"><img className={styles.logo} src={logo} alt="Logo de 'eL TROnaDOR', vinoteca" /></Link>
                 <div className={styles.titleContainer}>
-                    <h1 className={styles.title}>Vinoteca 'eL TROnaDOR'</h1>
+                    <h1 className={styles.title}>Vinoteca '<span className={styles.minusculas}>e</span>L TRO<span className={styles.minusculas}>na</span>DOR'</h1>
                 </div>
-                {!menuOpen && <i className={`bi bi-list ${styles.hamburger}`} onClick={() => setMenuOpen(true)} />}
             </div>
-
+            <div className={styles.subtitle}>
+                <p>🍷Especialistas en vinos y bebidas</p>
+                <p>📍Av. España esq. Yrigoyen</p>
+                <p> 📞 0249 443-2981</p>
+            </div>
+            {!menuOpen && <i className={`bi bi-list ${styles.hamburger}`} onClick={() => setMenuOpen(true)} />}
         </div>
     </header>
 }

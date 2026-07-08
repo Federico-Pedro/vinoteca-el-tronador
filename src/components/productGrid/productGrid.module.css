@@ -1,0 +1,135 @@
+.body {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-top: 30px;
+
+}
+
+.cardContainer {
+    margin: 0;
+    background-color: var(--bg);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: rgba(26, 26, 26, 0.25);
+    width: 400px;
+    height: 565px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+
+}
+
+.cardTitle {
+    font-size: 1.5rem;
+    color: var(--text);
+    font-family: 'unicase', serif
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.description p {
+    font-size: 1.2rem;
+    color: var(--text);
+    font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
+
+}
+
+.price {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: var(--text);
+    font-family: 'unicase', serif
+    /* border: 1px solid yellow */
+
+}
+
+.card img {
+    width: 300px;
+    height: 300px;
+    margin: 15px;
+    object-fit: cover
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+
+}
+
+.paginationButton {
+    padding: 0.5rem 1rem;
+    background: var(--card);
+    color: var(--text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.paginationButton:hover:not(:disabled) {
+    background: var(--gray);
+    /* transform: translateY(-2px); */
+}
+
+.paginationButton:disabled {
+    background: var(--light-gray);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.pageNumbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pageButton {
+    padding: 0.5rem 0.75rem;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pageButton:hover {
+    background: var(--gray);
+}
+
+.activePage {
+    padding: 0.5rem 0.75rem;
+    background: var(--light-gray);
+    color: var(--text);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.buttonContainer {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
+    overflow: hidden;
+
+}

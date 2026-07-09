@@ -4,8 +4,7 @@
   --light-gray: #707070;
   --text: #f0f0f0;
   --card: rgba(26, 26, 26, 0.25);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow:rgba(211, 211, 211, 0.1);
 
   
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import styles from './productGrid.module.css'
 import { Link } from 'react-router-dom';
-
+import Back from '../back/back.jsx'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -11,11 +11,12 @@ function ProductGrid() {
 
     const navigate = useNavigate()
 
+    const productsPerPage = 9;
     const [randomProducts, setRandomProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
+    const [counter, setCounter] = useState(productsPerPage)
 
-    const productsPerPage = 9;
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
@@ -28,10 +29,7 @@ function ProductGrid() {
 
     const currentProducts = rutasImagenes.slice(indexOfFirstProduct, indexOfLastProduct);
 
-    console.log("Glob: ", archivosGlob)
-    console.log("first: ", indexOfFirstProduct)
-    console.log("last: ", indexOfLastProduct)
-    console.log("Cantidad: ", cantidadProductos)
+    
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
@@ -39,6 +37,15 @@ function ProductGrid() {
 
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        
+        const products = currentPage * productsPerPage
+        setCounter(products)
+
+        return;
+    }, [currentPage]);
+
 
     const totalPages = Math.ceil(cantidadProductos / productsPerPage);
 
@@ -57,7 +64,7 @@ function ProductGrid() {
 
 
             <div className={styles.counter}>
-                Mostrando {cantidadProductos >= 10 ? productsPerPage : cantidadProductos} / {cantidadProductos} productos
+                Mostrando {counter} / {cantidadProductos} productos
             </div>
 
 
@@ -110,7 +117,9 @@ function ProductGrid() {
                     Siguiente →
                 </button>
             </div>
+            <Back />
         </div >
+
     )
 }
 

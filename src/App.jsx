@@ -7,6 +7,9 @@ import Carousel from './components/carousel/carousel'
 import SocialSideBar from './components/socialSideBar/socialSideBar'
 import ProductGrid from './components/productGrid/productGrid'
 import Footer from './components/footer/footer'
+
+import AboutUs from './components/aboutUs/aboutUs'
+import Map from './components/map/map'
 import { FloatingWhatsApp } from '@digicroz/react-floating-whatsapp'
 
 
@@ -15,14 +18,17 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header />  
+      <Header />
       <NavBar />
       <Carousel />
       <SocialSideBar />
-      <Routes>  
+      <Routes>
+        <Route path="/productGrid" element={<ProductGrid />} />
 
+        <Route path="/aboutUs" element={<AboutUs />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
-      <ProductGrid />
+      
       <FloatingWhatsApp
         phoneNumber="542494216514"
         accountName="eL TROnaDOR"
@@ -30,7 +36,7 @@ function App() {
         statusMessage="Contestamos en 15 minutos"
         chatMessage="Hola! ¿En qué te podemos ayudar?"
       />
-      
+
       <Footer />
 
 

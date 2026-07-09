@@ -11,19 +11,19 @@ function NavBar() {
     return <nav className={styles.navBar}>
         <div className={styles.container}>
 
-            <Link to="">
+            <Link to="/productGrid">
                 <button className={styles.button}>
-                    Inicio
+                    Nuestros Productos
                 </button>
             </Link>
-            <Link to="">
+            <Link to="/aboutUs">
                 <button className={styles.button}>
                     ¿Quiénes somos?
                 </button>
             </Link>
-            <Link to="">
+            <Link to="/map">
                 <button className={styles.button}>
-                    FAQ
+                    ¿Dónde estamos?
                 </button>
             </Link>
             <Link to="">

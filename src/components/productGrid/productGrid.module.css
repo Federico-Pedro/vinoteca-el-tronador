@@ -9,6 +9,10 @@
 
 }
 
+.counter {
+    color: var(--light-gray)
+}
+
 .cardContainer {
     margin: 0;
     background-color: var(--bg);
@@ -27,12 +31,12 @@
     justify-content: center;
     align-items: center;
     padding: 35px;
-
+   
 }
 
 .cardTitle {
     font-size: 1.5rem;
-    color: var(--text);
+    color: var(--light-gray);
     font-family: 'unicase', serif
 }
 
@@ -43,7 +47,7 @@
 
 .description p {
     font-size: 1.2rem;
-    color: var(--text);
+    color: var(--light-gray);
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
 
@@ -53,7 +57,7 @@
     display: flex;
     justify-content: flex-end;
     font-size: 1.5rem;
-    color: var(--text);
+    color: var(--light-gray);
     font-family: 'unicase', serif
     /* border: 1px solid yellow */
 

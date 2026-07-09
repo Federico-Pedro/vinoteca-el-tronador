@@ -1,0 +1,18 @@
+.backContainer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    
+    
+}
+
+.back{
+    font-size: 1.5rem;
+    font-family: 'unicase', serif;
+    color: var(--light-gray);
+    transition: all .5s ease-in-out;
+}
+
+.back:hover {
+    color: var(--text)
+}

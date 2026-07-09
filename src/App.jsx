@@ -7,7 +7,7 @@ import Carousel from './components/carousel/carousel'
 import SocialSideBar from './components/socialSideBar/socialSideBar'
 import ProductGrid from './components/productGrid/productGrid'
 import Footer from './components/footer/footer'
-
+import Contact from './components/contact/contact'
 import AboutUs from './components/aboutUs/aboutUs'
 import Map from './components/map/map'
 import { FloatingWhatsApp } from '@digicroz/react-floating-whatsapp'
@@ -27,6 +27,7 @@ function App() {
 
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       
       <FloatingWhatsApp

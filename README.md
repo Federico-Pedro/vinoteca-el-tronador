@@ -1,91 +1,110 @@
 # Vinoteca "eL TROnaDOR"
- 
-Landing page para una vinoteca, desarrollada como proyecto freelance/cliente. Sitio de una sola página (por ahora) con estética dark/gold, catálogo de productos, carrusel de destacados y contacto directo por WhatsApp.
- 
+
+Landing page para una vinoteca, desarrollada como proyecto freelance/cliente. Sitio con navegación por rutas (React Router), estética dark/gold, catálogo de productos, carrusel de destacados, sección "Quiénes somos", mapa de ubicación y contacto directo por WhatsApp.
+
 ## 🍷 Stack tecnológico
- 
+
 - **React 19** + **Vite** — frontend
-- **React Router DOM** — ruteo (preparado para futuras secciones/páginas, aún sin rutas definidas)
+- **React Router DOM** — ruteo entre secciones
 - **CSS Modules** — estilos encapsulados por componente
 - **Embla Carousel** (`embla-carousel-react` + `embla-carousel-autoplay`) — carrusel de imágenes destacadas
 - **@digicroz/react-floating-whatsapp** — botón flotante de contacto por WhatsApp
 - **Bootstrap Icons** — iconografía (redes sociales, flechas, etc.)
 - **Tipografías custom** en `public/fonts/`: Cinzel, Cormorant Garamond, Cormorant Unicase, Playfair Display, y dos tipografías decorativas adicionales (`anarcharsissc.ttf`, `title.ttf`)
+
 No hay backend ni base de datos por el momento: el catálogo de productos se maneja localmente en el proyecto (ver sección [Gestión de productos](#-gestión-de-productos)).
- 
+
 ## 🚀 Instalación
- 
+
 ```bash
 git clone https://github.com/Federico-Pedro/vinoteca-el-tronador.git
 cd vinoteca-el-tronador
 npm install
 npm run dev
 ```
- 
+
 El proyecto va a estar disponible en `http://localhost:5173`.
- 
+
+## 🗺 Rutas
+
+| Ruta | Componente | Descripción |
+|---|---|---|
+| `/` | — | Home: Header, NavBar, Carousel, SocialSideBar, FloatingWhatsApp y Footer siempre visibles |
+| `/productGrid` | `ProductGrid` | Catálogo de productos con paginación |
+| `/aboutUs` | `AboutUs` | Sección "Quiénes somos" |
+| `/map` | `Map` | Mapa de ubicación embebido (Google Maps) |
+
 ## 📁 Estructura del proyecto
- 
+
 ```
 public/
-└── fonts/                  # Tipografías custom del sitio
- 
+└── fonts/                   # Tipografías custom del sitio
+
 src/
 ├── assets/
-│   ├── destacados/          # Imágenes para el carrusel del hero
-│   ├── cards/                # Imágenes de productos para la grilla
+│   ├── destacados/           # Imágenes para el carrusel del hero
+│   ├── cards/                 # Imágenes de productos para la grilla
+│   ├── misc/                  # Imágenes sueltas de uso general (ej. AboutUs)
 │   └── logo.png
 ├── components/
 │   ├── header/
 │   ├── navBar/
-│   ├── carousel/             # Carrusel de destacados (Embla)
-│   ├── socialSideBar/        # Sidebar fijo con iconos de redes sociales
-│   ├── productGrid/          # Grilla de productos con paginación
+│   ├── carousel/               # Carrusel de destacados (Embla)
+│   ├── socialSideBar/          # Sidebar fijo con iconos de redes sociales
+│   ├── productGrid/             # Grilla de productos con paginación
+│   ├── aboutUs/                  # Sección "Quiénes somos"
+│   ├── map/                       # Mapa embebido de ubicación
+│   ├── back/                       # Link "Volver" reutilizable (navigate(-1))
 │   └── footer/
 ├── App.jsx
 ├── App.css
 └── main.jsx
 ```
- 
+
 Las imágenes de `destacados/` y `cards/` se importan dinámicamente con `import.meta.glob`, así que alcanza con soltar un archivo nuevo en la carpeta correspondiente para que aparezca en el sitio — no hace falta importarlas una por una a mano.
- 
+
 ## 🎠 Carrusel de destacados
- 
+
 Construido con **Embla Carousel** en vez de `react-slick`, que fue la elección inicial pero resultó incompatible con React 19 (depende de `ReactDOM.findDOMNode`, eliminado en esa versión de React).
- 
+
 Estructura de tres niveles requerida por Embla (a diferencia de `react-slick`, es una librería *headless*, no trae HTML/CSS propio):
- 
+
 ```
 viewport (overflow: hidden, ref de Embla)
   └── container (display: flex — la fila que se desliza)
         └── slides individuales
 ```
- 
+
 Incluye botones de navegación (prev/next) y dots de posición, sincronizados vía el evento `"select"` de la API de Embla.
- 
+
 ## 🛍 Gestión de productos
- 
+
 El catálogo actual (`ProductGrid`) muestra únicamente imágenes leídas de `/src/assets/cards/`, sin nombre, precio ni descripción asociados. Incluye paginación (10 productos por página) y un spinner de carga simulado con `setTimeout`.
- 
-**Decisión de arquitectura:** se evaluó implementar una base de datos con backend (Spring Boot + JPA, siguiendo el patrón de otros proyectos previos) para permitir autogestión del catálogo. Se descartó por ahora porque:
-- El cliente no gestiona el catálogo — el desarrollador es quien carga/actualiza productos.
-- El volumen y frecuencia de cambios del catálogo no justifica el costo de mantener backend + base de datos + hosting de servidor.
-**Enfoque planeado:** un archivo `src/data/productos.js` con un array de objetos (`id`, `nombre`, `precio`, `descripcion`, `imagen`) versionado junto al código. Agregar un producto implica sumar un objeto al array y hacer un nuevo deploy — costo aceptable dado el contexto del negocio. **Pendiente de implementar** — `ProductGrid` todavía no tiene nombres ni precios.
- 
+
+**Decisión de arquitectura:** se evaluó implementar una base de datos con backend (Spring Boot + JPA) para permitir autogestión del catálogo. Se descartó por ahora porque el cliente no gestiona el catálogo (lo hace el desarrollador), y el volumen/frecuencia de cambios no justifica el costo de backend + base de datos + hosting de servidor.
+
+**Enfoque planeado:** un archivo `src/data/productos.json` con un array de objetos (`id`, `nombre`, `precio`, `descripcion`, `imagen`), editable como planilla con la extensión "JSON Grid" de VS Code, e importado directamente en el componente (`import productos from '../../data/productos.json'`). **Pendiente de implementar** — `ProductGrid` todavía no tiene nombres ni precios.
+
+## 🗺 Mapa de ubicación
+
+Embebido con un `<iframe>` generado desde Google Maps (botón "Compartir → Incorporar un mapa"). El nivel de zoom se controla con el parámetro `1d` dentro del string `pb=` de la URL (representa la distancia de la vista en metros: cuanto más bajo el número, más zoom).
+
 ## 📞 Contacto
- 
-- **WhatsApp:** botón flotante (`FloatingWhatsApp`) con número, nombre de cuenta y mensaje predefinido ya configurados.
+
+- **WhatsApp:** botón flotante (`FloatingWhatsApp`), visible en todas las rutas, con número, nombre de cuenta y mensaje predefinido ya configurados.
 - **Formulario de contacto:** pendiente de implementación. Opciones evaluadas: Formspree / EmailJS (sin backend propio) o endpoint propio en Spring Boot con `JavaMailSender` (si el proyecto llega a tener backend).
+
 ## ⚠️ Notas y problemas conocidos resueltos
- 
+
 - **`react-slick` → Embla:** ver sección de carrusel.
 - **`react-whatsapp-widget` → `@digicroz/react-floating-whatsapp`:** el paquete original no soporta React 19 (peer dependency `^18.0.0`). Se probaron alternativas mantenidas hasta encontrar una compatible.
 - **Caché de Vite desactualizada:** al instalar/desinstalar paquetes con el servidor de desarrollo corriendo, puede aparecer el error `Outdated Optimize Dep` (504). Solución: reiniciar con `npm run dev -- --force`, o borrar `node_modules/.vite` manualmente.
 - **`return` con salto de línea antes del JSX:** por Automatic Semicolon Insertion, `return` seguido de un salto de línea antes de `<>` hace que la función devuelva `undefined` sin tirar error. Siempre envolver en paréntesis: `return (...)`.
+- **Imports relativos rotos (`./` vs `../`):** al mover componentes a carpetas hermanas dentro de `components/`, hay que subir un nivel con `../` antes de entrar a la carpeta destino.
+
 ## 🧹 A revisar antes de la entrega final
- 
+
 - [ ] Limpiar los archivos duplicados con `(Copy)` en `src/assets/cards/` (quedaron de pruebas para simular más productos en la paginación).
-- [ ] Implementar `productos.js` con datos reales y conectar `ProductGrid`.
+- [ ] Implementar `productos.json` con datos reales y conectar `ProductGrid`.
 - [ ] Formulario de contacto funcional.
-- [ ] Definir si el sitio va a tener más de una página (rutas ya preparadas con React Router, pero vacías).
- 
+- [ ] Verificar que el token de GitHub usado para `git push` esté vigente (autenticación por contraseña ya no es válida; requiere Personal Access Token).

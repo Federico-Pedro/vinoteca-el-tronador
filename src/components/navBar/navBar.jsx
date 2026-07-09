@@ -26,7 +26,7 @@ function NavBar() {
                     ¿Dónde estamos?
                 </button>
             </Link>
-            <Link to="">
+            <Link to="/contact">
                 <button className={styles.button}>
                     Contacto
                 </button>

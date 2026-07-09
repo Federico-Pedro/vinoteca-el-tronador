@@ -91,7 +91,7 @@
 
 .paginationButton:hover:not(:disabled) {
     background: var(--gray);
-    /* transform: translateY(-2px); */
+    
 }
 
 .paginationButton:disabled {

@@ -10,6 +10,7 @@ import Footer from './components/footer/footer'
 import Contact from './components/contact/contact'
 import AboutUs from './components/aboutUs/aboutUs'
 import Map from './components/map/map'
+import ScrollTo from './components/funciones/scrollTo'
 import { FloatingWhatsApp } from '@digicroz/react-floating-whatsapp'
 
 
@@ -18,18 +19,22 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollTo />
       <Header />
       <NavBar />
       <Carousel />
       <SocialSideBar />
-      <Routes>
-        <Route path="/productGrid" element={<ProductGrid />} />
 
-        <Route path="/aboutUs" element={<AboutUs />} />
-        <Route path="/map" element={<Map />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      
+      <div id="contenido-rutas">
+        <Routes>
+          <Route path="/productGrid" element={<ProductGrid />} />
+
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+
       <FloatingWhatsApp
         phoneNumber="542494216514"
         accountName="eL TROnaDOR"

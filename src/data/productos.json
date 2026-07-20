@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "categoria": "tinto",
+    "nombre": "Malbec Reserva",
+    "precio": 6000,
+    "descripcion": "Vino tinto de la región de Tandil",
+    "imagen": "src/assets/cards/001.jpeg"
+  },
+  {
+    "id": 2,
+    "categoria": "tinto",
+    "nombre": "Cabernet Sauvignon",
+    "precio": 7200,
+    "descripcion": "El cabernet sauvignon es el vino mas importante producido en francia",
+    "imagen": "src/assets/cards/002.jpeg"
+  },
+  {
+    "id": 3,
+    "categoria": "blanco",
+    "nombre": "Sangiovese de San Felipe",
+    "precio": 15200,
+    "descripcion": "Sangiovese es la uva mas producida de blancos en francia",
+    "imagen": "src/assets/cards/005.jpeg"
+  },
+  {
+    "id": 4,
+    "categoria": "gin",
+    "nombre": "Bombay",
+    "precio": 35000,
+    "descripcion": "El mejor gin Hindú directo a su mesa",
+    "imagen": "src/assets/cards/011.jpeg"
+  },
+  {
+    "id": 5,
+    "categoria": "gin",
+    "nombre": "Aconcagua",
+    "precio": 26000,
+    "descripcion": "El gin argentino por excelencia, no existe mejor producto nacional que este",
+    "imagen": "src/assets/cards/012.jpeg"
+  },
+  {
+    "id": 6,
+    "categoria": "whisky",
+    "nombre": "Chivas Regal 12 años",
+    "precio": 63250,
+    "descripcion": "El whisky escocés por excelencia, el que tomaba Jamie en outlander",
+    "imagen": "src/assets/cards/016.jpeg"
+  },
+  {
+    "id": 7,
+    "categoria": "espumante",
+    "nombre": "Nicasia",
+    "precio": 15230,
+    "descripcion": "El espumante premium de esta bodega, un blend de uvas que logran un corte demi ses",
+    "imagen": "src/assets/cards/005.jpeg"
+  },
+  {
+    "id": 8,
+    "categoria": "tinto",
+    "nombre": "Hermandad",
+    "precio": 8960,
+    "descripcion": "Este blend de tintos logra un vino equilibrado, de buen cuerpo y persistencia en boca",
+    "imagen": "src/assets/cards/014.jpeg"
+  },
+  {
+    "id": 9,
+    "categoria": "varias",
+    "nombre": "Baileys",
+    "precio": 34780,
+    "descripcion": "Para disfrutar de una trago diferente durante el partido de canasta con tus amigos",
+    "imagen": "src/assets/cards/003.jpeg"
+  }
+]

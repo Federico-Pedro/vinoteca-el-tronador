@@ -1,0 +1,4 @@
+id,categoria,nombre,precio,descripcion,imagen
+1,tinto,Malbec Reserva,8500,Vino tinto de la región de Tandil,src/assets/cards/001.jpeg
+2,tinto,Cabernet Sauvignon,7200,El cabernet sauvignon es el vino mas importante producido en francia,src/assets/cards/002.jpeg
+3,blanco,Sangiovese de San Felipe,15200,Sangiovese es la uva mas producida de blancos en francia,src/assets/cards/005.jpeg

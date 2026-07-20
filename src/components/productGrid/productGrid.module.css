@@ -31,7 +31,7 @@
     justify-content: center;
     align-items: center;
     padding: 35px;
-   
+
 }
 
 .cardTitle {
@@ -59,7 +59,7 @@
     font-size: 1.5rem;
     color: var(--light-gray);
     font-family: 'unicase', serif
-    /* border: 1px solid yellow */
+        /* border: 1px solid yellow */
 
 }
 
@@ -91,7 +91,7 @@
 
 .paginationButton:hover:not(:disabled) {
     background: var(--gray);
-    
+
 }
 
 .paginationButton:disabled {
@@ -136,4 +136,23 @@
     margin: 10px;
     overflow: hidden;
 
+}
+
+
+@media (max-width: 1025px) {
+    .cardContainer {
+        
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cardContainer {
+        
+        grid-template-columns: 1fr;
+        gap: 20px;
+        
+    }
 }

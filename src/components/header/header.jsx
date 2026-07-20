@@ -8,7 +8,7 @@ import logo from '../../assets/logo.png';
 
 function Header() {
 
-    const [menuOpen, setMenuOpen] = useState(true)
+    
     const navigate = useNavigate()
 
     return <header className={styles.header}>
@@ -25,8 +25,8 @@ function Header() {
                 <p>📍Av. España esq. Yrigoyen</p>
                 <p> 📞 0249 443-2981</p>
             </div>
-            {!menuOpen && <i className={`bi bi-list ${styles.hamburger}`} onClick={() => setMenuOpen(true)} />}
         </div>
+        
     </header>
 }
 

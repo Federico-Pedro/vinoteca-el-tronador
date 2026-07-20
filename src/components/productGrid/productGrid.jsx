@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 import styles from './productGrid.module.css'
-import { Link } from 'react-router-dom';
 import Back from '../back/back.jsx'
-import { useNavigate } from 'react-router-dom'
+import productos from '../../data/productos.json';
 
 
 
@@ -11,7 +12,7 @@ function ProductGrid() {
 
     const navigate = useNavigate()
 
-    const productsPerPage = 9;
+    const productsPerPage = 6;
     const [randomProducts, setRandomProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
@@ -20,16 +21,16 @@ function ProductGrid() {
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
-    const archivosGlob = import.meta.glob('/src/assets/cards/*', { eager: true });
-    const rutasImagenes = Object.values(archivosGlob).map(modulo => modulo.default);
-    const cantidadProductos = rutasImagenes.length
-
-
-
-
-    const currentProducts = rutasImagenes.slice(indexOfFirstProduct, indexOfLastProduct);
+    
+    let cantidadProductos = 0
+    
+    productos.map(p => cantidadProductos += 1)
 
     
+
+    const currentProducts = productos.slice(indexOfFirstProduct, indexOfLastProduct);
+
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
@@ -39,8 +40,8 @@ function ProductGrid() {
     }, []);
 
     useEffect(() => {
-        
-        const products = currentPage * productsPerPage
+
+        const products = cantidadProductos >= (currentPage * productsPerPage) ? (currentPage * productsPerPage) : cantidadProductos
         setCounter(products)
 
         return;
@@ -64,18 +65,18 @@ function ProductGrid() {
 
 
             <div className={styles.counter}>
-                Mostrando {counter} / {cantidadProductos} productos
+                Mostrando {cantidadProductos <= productsPerPage ? cantidadProductos : counter} / {cantidadProductos} productos
             </div>
 
 
             <div className={styles.cardContainer}>
-                {currentProducts.map((ruta, index) => (
-                    <div key={index} className={styles.card}>
-                        <div className={styles.cardTitle}>Nombre del producto</div>
-                        <img src={ruta} alt={"Productos destacados"} />
+                {currentProducts.map((producto) => (
+                    <div key={producto.id} className={styles.card}>
+                        <div className={styles.cardTitle}>{producto.nombre}</div>
+                        <img src={producto.imagen} alt={"Productos destacados"} />
                         <div className={styles.description}>
-                            <p>Descripcion del producto con algunas características importantes para que el cliente sepa lo que compra</p>
-                            <h3 className={styles.price}>$50.000</h3>
+                            <p>{producto.descripcion}</p>
+                            <h3 className={styles.price}>${producto.precio}</h3>
                         </div>
                     </div>
                 ))}

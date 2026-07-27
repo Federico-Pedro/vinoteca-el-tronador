@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
 import styles from './productGrid.module.css'
 import Back from '../back/back.jsx'
 import productos from '../../data/productos.json';
-
+import PriceRangeSlider from '../slider/slider.jsx'
+import { useCart } from "../../context/CartContext.jsx";
 
 
 function ProductGrid() {
@@ -17,18 +18,63 @@ function ProductGrid() {
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
     const [counter, setCounter] = useState(productsPerPage)
+    const [activeFilters, setActiveFilters] = useState([]);
+
+    const [minVal, setMinVal] = useState(2500);
+    const [maxVal, setMaxVal] = useState(100000);
 
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
-    
+    const { addToCart } = useCart();
+
+
+    const productosFiltrados = useMemo(() => {
+        let resultado = productos;
+
+        // 1. Filtro por categoría (solo si hay categorías activas)
+        if (activeFilters.length > 0) {
+            resultado = resultado.filter((p) => activeFilters.includes(p.categoria));
+        }
+
+        // 2. Filtro por precio, aplicado sobre el resultado anterior
+        resultado = resultado.filter(
+            (p) => p.precio >= minVal && p.precio <= maxVal
+        );
+
+        return resultado;
+    }, [activeFilters, minVal, maxVal]);
+
+
     let cantidadProductos = 0
-    
-    productos.map(p => cantidadProductos += 1)
+    productosFiltrados.map(p => cantidadProductos += 1)
 
-    
 
-    const currentProducts = productos.slice(indexOfFirstProduct, indexOfLastProduct);
+    //CATEGORIAS DE LOS PRODUCTOS TRAIDAS DEL JSON
+    let categorias = productos.map(producto => producto.categoria)
+    categorias = [...new Set(categorias)]
+
+
+
+    //AGREGA A "ACTIVEFILTERS" LOS FILTROS CLICKEADOS
+    const handleFilterClick = (filter) => {
+        setActiveFilters(prev =>
+            prev.includes(filter) ? prev.filter(f => f !== filter) : [...prev, filter]
+        )
+
+    }
+
+
+
+    useEffect(() => {
+        if (productosFiltrados.length <= 6) {
+            setCurrentPage(1)
+        }
+        return
+    }, [productosFiltrados])
+
+
+    const currentProducts = productosFiltrados.slice(indexOfFirstProduct, indexOfLastProduct);
 
 
     useEffect(() => {
@@ -63,7 +109,25 @@ function ProductGrid() {
     return (
         <div className={styles.body}>
 
+            <div className={styles.filtersContainer}>
+                {categorias.map((cat) => (
+                    <button
+                        className={activeFilters.includes(cat) ? styles.clickedButton : styles.filterButton}
+                        onClick={() => handleFilterClick(cat)}
+                    >
+                        {cat.toUpperCase()}
+                    </button>
+                ))}
+            </div>
 
+            <PriceRangeSlider
+                min={2500}
+                max={100000}
+                minVal={minVal}
+                maxVal={maxVal}
+                onMinChange={setMinVal}
+                onMaxChange={setMaxVal}
+            />
             <div className={styles.counter}>
                 Mostrando {cantidadProductos <= productsPerPage ? cantidadProductos : counter} / {cantidadProductos} productos
             </div>
@@ -77,6 +141,11 @@ function ProductGrid() {
                         <div className={styles.description}>
                             <p>{producto.descripcion}</p>
                             <h3 className={styles.price}>${producto.precio}</h3>
+                        </div>
+                        <div className={styles.cartButtonContainer}>
+                        <button className={styles.filterButton} onClick={() => addToCart(producto)}>
+                            Agregar al carrito
+                        </button>
                         </div>
                     </div>
                 ))}

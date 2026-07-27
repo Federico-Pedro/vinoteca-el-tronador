@@ -5,11 +5,16 @@ import { useState } from "react";
 
 import logo from '../../assets/logo.png';
 
+import { useCart } from "../../context/CartContext.jsx";
+
 
 function Header() {
 
+    const { cart } = useCart();
     
     const navigate = useNavigate()
+
+    const cantidadTotalProductos = cart.reduce((acc, item) => acc + item.cantidad, 0);
 
     return <header className={styles.header}>
         <div className={styles.container}>
@@ -24,6 +29,13 @@ function Header() {
                 <p>🍷Especialistas en vinos y bebidas</p>
                 <p>📍Av. España esq. Yrigoyen</p>
                 <p> 📞 0249 443-2981</p>
+            </div>
+            <div className={styles.cartContainer}>
+                <div className={styles.iconContainer}>
+
+                <i className="bi bi-cart"></i>
+                <p className={styles.numberOfProducts}>{cantidadTotalProductos}</p>
+                </div>
             </div>
         </div>
         

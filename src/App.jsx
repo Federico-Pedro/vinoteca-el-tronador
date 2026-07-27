@@ -12,41 +12,44 @@ import AboutUs from './components/aboutUs/aboutUs'
 import Map from './components/map/map'
 import ScrollTo from './components/funciones/scrollTo'
 import { FloatingWhatsApp } from '@digicroz/react-floating-whatsapp'
-
+import { CartProvider } from "./context/CartContext.jsx";
 
 function App() {
 
 
   return (
-    <BrowserRouter>
-      <ScrollTo />
-      <Header />
-      <NavBar />
-      <Carousel />
-      <SocialSideBar />
+    <CartProvider>
 
-      <div id="contenido-rutas">
-        <Routes>
-          <Route path="/productGrid" element={<ProductGrid />} />
+      <BrowserRouter>
+        <ScrollTo />
+        <Header />
+        <NavBar />
+        <Carousel />
+        <SocialSideBar />
 
-          <Route path="/aboutUs" element={<AboutUs />} />
-          <Route path="/map" element={<Map />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
+        <div id="contenido-rutas">
+          <Routes>
+            <Route path="/productGrid" element={<ProductGrid />} />
 
-      <FloatingWhatsApp
-        phoneNumber="542494216514"
-        accountName="eL TROnaDOR"
-        avatar="src/assets/logo.png"
-        statusMessage="Contestamos en 15 minutos"
-        chatMessage="Hola! ¿En qué te podemos ayudar?"
-      />
+            <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/map" element={<Map />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
 
-      <Footer />
+        <FloatingWhatsApp
+          phoneNumber="542494603740"
+          accountName="eL TROnaDOR"
+          avatar="src/assets/logo.png"
+          statusMessage="Contestamos en 15 minutos"
+          chatMessage="Hola! ¿En qué te podemos ayudar?"
+        />
+
+        <Footer />
 
 
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

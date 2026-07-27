@@ -8,6 +8,41 @@
     padding-top: 30px;
 
 }
+.filtersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.filterButton, .clickedButton {
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+    background-color: var(--gray);
+    opacity: 80%;
+    border-radius: 15px;
+    color: var(--light-gray);
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'title', serif;
+    border: none;
+    transition: all .5s ease-in-out;
+}
+
+.filterButton:hover, .clickedButton:hover, .cartButton:hover {
+    color: var(--text);
+    cursor: pointer
+}
+
+.cartButtonContainer {
+    height: 50px;
+}
+
+.clickedButton {
+    box-shadow: inset 5px 5px 10px gray, inset -5px -5px 10px lightgray;
+}
 
 .counter {
     color: var(--light-gray)
@@ -69,6 +104,7 @@
     margin: 15px;
     object-fit: cover
 }
+
 
 .paginationContainer {
     display: flex;

@@ -30,7 +30,7 @@
     font-size: 3rem;
     font-weight: 500;
     font-style: normal;
-        
+
 }
 
 .minusculas {
@@ -51,7 +51,33 @@
     padding: 0
 }
 
+.cartContainer {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+}
 
+i {
+    font-size: 2rem;
+}
+
+.iconContainer {
+    position: relative;
+    height: 55px;
+    width: 55px;
+    
+}
+
+.numberOfProducts {
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px
+
+}
 
 @media (max-width: 1330px) {
     .title {
@@ -79,11 +105,11 @@
     .title {
         margin-top: 0;
     }
-    
+
 
     .subtitle {
         align-items: center;
     }
 
-    
+
 }

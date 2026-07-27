@@ -6,11 +6,13 @@ import { useState } from "react";
 import logo from '../../assets/logo.png';
 
 import { useCart } from "../../context/CartContext.jsx";
+import Cart from '../cart/cart.jsx'
 
 
 function Header() {
 
-    const { cart } = useCart();
+    const { cart, isCartOpen, openCart, closeCart } = useCart();
+    
     
     const navigate = useNavigate()
 
@@ -30,7 +32,7 @@ function Header() {
                 <p>📍Av. España esq. Yrigoyen</p>
                 <p> 📞 0249 443-2981</p>
             </div>
-            <div className={styles.cartContainer}>
+            <div className={styles.cartContainer} onClick={openCart}>
                 <div className={styles.iconContainer}>
 
                 <i className="bi bi-cart"></i>
@@ -38,7 +40,7 @@ function Header() {
                 </div>
             </div>
         </div>
-        
+        {isCartOpen && <Cart />}
     </header>
 }
 

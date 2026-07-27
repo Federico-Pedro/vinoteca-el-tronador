@@ -136,16 +136,18 @@ function ProductGrid() {
             <div className={styles.cardContainer}>
                 {currentProducts.map((producto) => (
                     <div key={producto.id} className={styles.card}>
-                        <div className={styles.cardTitle}>{producto.nombre}</div>
-                        <img src={producto.imagen} alt={"Productos destacados"} />
+                        <div className={styles.cardTitle}>{producto.nombre} </div>
+                        
+                            <img src={producto.imagen} alt={"Productos destacados"} />
+                        
                         <div className={styles.description}>
                             <p>{producto.descripcion}</p>
                             <h3 className={styles.price}>${producto.precio}</h3>
                         </div>
                         <div className={styles.cartButtonContainer}>
-                        <button className={styles.filterButton} onClick={() => addToCart(producto)}>
-                            Agregar al carrito
-                        </button>
+                            <button className={styles.filterButton} onClick={() => addToCart(producto)}>
+                                Agregar al carrito
+                            </button>
                         </div>
                     </div>
                 ))}

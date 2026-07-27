@@ -78,6 +78,9 @@
 .description {
     display: flex;
     flex-direction: column;
+    height: 150px;
+    width: 80%;
+    margin-bottom: 15px;
 }
 
 .description p {
@@ -97,6 +100,8 @@
         /* border: 1px solid yellow */
 
 }
+
+
 
 .card img {
     width: 300px;

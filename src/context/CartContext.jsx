@@ -3,6 +3,11 @@ import { createContext, useContext, useState, useEffect } from "react";
 const CartContext = createContext();
 
 export function CartProvider({ children }) {
+
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const openCart = () => setIsCartOpen(true)
+  const closeCart = () => setIsCartOpen(false)
+
   const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem("carrito");
     return saved ? JSON.parse(saved) : [];
@@ -17,7 +22,6 @@ export function CartProvider({ children }) {
     setCart((prev) => {
       const existe = prev.find((item) => item.id === producto.id);
       if (existe) {
-        // Si ya está, le suma cantidad en vez de duplicar la fila
         return prev.map((item) =>
           item.id === producto.id
             ? { ...item, cantidad: item.cantidad + 1 }
@@ -46,7 +50,7 @@ export function CartProvider({ children }) {
 
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart }}
+      value={{ cart, addToCart, removeFromCart, updateQuantity, clearCart, isCartOpen, openCart, closeCart }}
     >
       {children}
     </CartContext.Provider>

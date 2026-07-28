@@ -6,7 +6,8 @@
     "nombre": "Malbec Reserva",
     "precio": 6000,
     "descripcion": "Vino tinto de la región de Tandil",
-    "imagen": "src/assets/cards/001.jpeg"
+    "imagen": "src/assets/cards/001.jpeg",
+    "stock": false
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "nombre": "Cabernet Sauvignon",
     "precio": 7200,
     "descripcion": "El cabernet sauvignon es el vino mas importante producido en francia",
-    "imagen": "src/assets/cards/002.jpeg"
+    "imagen": "src/assets/cards/002.jpeg",
+    "stock": true
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "nombre": "Sangiovese de San Felipe",
     "precio": 15200,
     "descripcion": "Sangiovese es la uva mas producida de blancos en francia",
-    "imagen": "src/assets/cards/005.jpeg"
+    "imagen": "src/assets/cards/005.jpeg",
+    "stock": true
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "nombre": "Bombay",
     "precio": 35000,
     "descripcion": "El mejor gin Hindú directo a su mesa",
-    "imagen": "src/assets/cards/011.jpeg"
+    "imagen": "src/assets/cards/011.jpeg",
+    "stock": true
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@
     "nombre": "Aconcagua",
     "precio": 26000,
     "descripcion": "El gin argentino por excelencia, no existe mejor producto nacional que este",
-    "imagen": "src/assets/cards/012.jpeg"
+    "imagen": "src/assets/cards/012.jpeg",
+    "stock": true
   },
   {
     "id": 6,
@@ -51,7 +56,8 @@
     "nombre": "Chivas Regal 12 años",
     "precio": 63250,
     "descripcion": "El whisky escocés por excelencia, el que tomaba Jamie en outlander",
-    "imagen": "src/assets/cards/016.jpeg"
+    "imagen": "src/assets/cards/016.jpeg",
+    "stock": true
   },
   {
     "id": 7,
@@ -60,7 +66,8 @@
     "nombre": "Nicasia",
     "precio": 15230,
     "descripcion": "El espumante premium de esta bodega, un blend de uvas que logran un corte demi ses",
-    "imagen": "src/assets/cards/005.jpeg"
+    "imagen": "src/assets/cards/005.jpeg",
+    "stock": true
   },
   {
     "id": 8,
@@ -69,7 +76,8 @@
     "nombre": "Hermandad",
     "precio": 8960,
     "descripcion": "Este blend de tintos logra un vino equilibrado, de buen cuerpo y persistencia en boca",
-    "imagen": "src/assets/cards/014.jpeg"
+    "imagen": "src/assets/cards/014.jpeg",
+    "stock": true
   },
   {
     "id": 9,
@@ -78,6 +86,7 @@
     "nombre": "Baileys",
     "precio": 34780,
     "descripcion": "Para disfrutar de una trago diferente durante el partido de canasta con tus amigos",
-    "imagen": "src/assets/cards/003.jpeg"
+    "imagen": "src/assets/cards/003.jpeg",
+    "stock": true
   }
 ]

@@ -145,9 +145,11 @@ function ProductGrid() {
                             <h3 className={styles.price}>${producto.precio}</h3>
                         </div>
                         <div className={styles.cartButtonContainer}>
+                            {producto.stock ?
                             <button className={styles.filterButton} onClick={() => addToCart(producto)}>
                                 Agregar al carrito
-                            </button>
+                            </button> : <p className={styles.parograph}>El producto no se encuentra disponible</p>
+                            }
                         </div>
                     </div>
                 ))}

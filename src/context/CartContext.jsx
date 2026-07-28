@@ -10,12 +10,23 @@ export function CartProvider({ children }) {
 
   const [cart, setCart] = useState(() => {
     const saved = localStorage.getItem("carrito");
-    return saved ? JSON.parse(saved) : [];
+    if (!saved){return []}
+    const parsed = JSON.parse(saved);
+    if ((Date.now() - parsed.timestamp) > 60 *60 *1000){
+      return []
+    } else {
+      return parsed.cart
+    }
   });
+
 
   // Cada vez que cambia el carrito, lo guarda en localStorage
   useEffect(() => {
-    localStorage.setItem("carrito", JSON.stringify(cart));
+    const dataParaGuardar = {
+      cart: cart,
+      timestamp: Date.now(),
+    };
+    localStorage.setItem("carrito", JSON.stringify(dataParaGuardar));
   }, [cart]);
 
   const addToCart = (producto) => {

@@ -110,6 +110,10 @@
     object-fit: cover
 }
 
+.parograph{
+    font-size: 1rem;
+    color: var(--light-gray)
+} 
 
 .paginationContainer {
     display: flex;

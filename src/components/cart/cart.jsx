@@ -18,7 +18,7 @@ function Cart() {
     return mensaje;
   };
 
-  const numeroWhatsapp = "5492494216514"; // código país + área sin el 0 ni el 15
+  const numeroWhatsapp = "542494603740"; // código país + área sin el 0 ni el 15
 
   return (
     <div className={styles.overlay}>

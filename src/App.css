@@ -1,1 +1,13 @@
+.whatsappWrapper {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+}
 
+@media (max-width: 768px) {
+  .whatsappWrapper {
+    transform: scale(0.75);
+    transform-origin: bottom right;
+  }
+}

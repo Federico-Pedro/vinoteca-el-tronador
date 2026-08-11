@@ -13,6 +13,7 @@ import Map from './components/map/map'
 import ScrollTo from './components/funciones/scrollTo'
 import { FloatingWhatsApp } from '@digicroz/react-floating-whatsapp'
 import { CartProvider } from "./context/CartContext.jsx";
+import "./App.css"
 
 function App() {
 
@@ -37,13 +38,16 @@ function App() {
           </Routes>
         </div>
 
-        <FloatingWhatsApp
-          phoneNumber="542494603740"
-          accountName="eL TROnaDOR"
-          avatar="src/assets/logo.png"
-          statusMessage="Contestamos en 15 minutos"
-          chatMessage="Hola! ¿En qué te podemos ayudar?"
-        />
+        <div className="whatsappWrapper">
+
+          <FloatingWhatsApp
+            phoneNumber="542494603740"
+            accountName="eL TROnaDOR"
+            avatar="src/assets/logo.png"
+            statusMessage="Contestamos en 15 minutos"
+            chatMessage="Hola! ¿En qué te podemos ayudar?"
+          />
+        </div>
 
         <Footer />
 

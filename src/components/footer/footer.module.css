@@ -29,7 +29,7 @@
 
 .whatsapp {
     font-size: 3rem;
-    color: var(--dark-moss-green);
+    
     position: 'fixed';
     bottom: '24px';
     right: '24px';
@@ -49,4 +49,11 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .whatsapp {
+    font-size: 2rem;
+    bottom: '20px';
+    right: '20px';
+   
+}
 }

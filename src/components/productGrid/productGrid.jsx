@@ -7,7 +7,7 @@ import Back from '../back/back.jsx'
 import productos from '../../data/productos.json';
 import PriceRangeSlider from '../slider/slider.jsx'
 import { useCart } from "../../context/CartContext.jsx";
-import spinner from "../assets/spinner.gif"
+import spinner from "../../assets/spinner.gif"
 
 function ProductGrid() {
 

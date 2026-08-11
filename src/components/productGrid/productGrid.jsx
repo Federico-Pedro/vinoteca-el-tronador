@@ -34,7 +34,7 @@ function ProductGrid() {
 
         // 1. Filtro por categoría (solo si hay categorías activas)
         if (activeFilters.length > 0) {
-            resultado = resultado.filter((p) => activeFilters.includes(p.categoria));
+            resultado = resultado.filter((p) => activeFilters.includes(p.bodega));
         }
 
         // 2. Filtro por precio, aplicado sobre el resultado anterior
@@ -54,6 +54,8 @@ function ProductGrid() {
     let categorias = productos.map(producto => producto.categoria)
     categorias = [...new Set(categorias)]
 
+    let bodegas = productos.map(producto => producto.bodega)
+    bodegas = [...new Set(bodegas)]
 
 
     //AGREGA A "ACTIVEFILTERS" LOS FILTROS CLICKEADOS
@@ -110,7 +112,7 @@ function ProductGrid() {
         <div className={styles.body}>
 
             <div className={styles.filtersContainer}>
-                {categorias.map((cat) => (
+                {bodegas.map((cat) => (
                     <button
                         className={activeFilters.includes(cat) ? styles.clickedButton : styles.filterButton}
                         onClick={() => handleFilterClick(cat)}

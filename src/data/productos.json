@@ -12,7 +12,7 @@
   {
     "id": 2,
     "categoria": "tinto",
-    "bodega": "Catena Zapata",
+    "bodega": "Selentein",
     "nombre": "Cabernet Sauvignon",
     "precio": 7200,
     "descripcion": "El cabernet sauvignon es el vino mas importante producido en francia",
@@ -32,7 +32,7 @@
   {
     "id": 4,
     "categoria": "gin",
-    "bodega": "Catena Zapata",
+    "bodega": "Gin",
     "nombre": "Bombay",
     "precio": 35000,
     "descripcion": "El mejor gin Hindú directo a su mesa",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "categoria": "whisky",
-    "bodega": "Catena Zapata",
+    "bodega": "Chivas",
     "nombre": "Chivas Regal 12 años",
     "precio": 63250,
     "descripcion": "El whisky escocés por excelencia, el que tomaba Jamie en outlander",
@@ -82,7 +82,7 @@
   {
     "id": 9,
     "categoria": "licores",
-    "bodega": "Catena Zapata",
+    "bodega": "Baileys",
     "nombre": "Baileys",
     "precio": 34780,
     "descripcion": "Para disfrutar de una trago diferente durante el partido de canasta con tus amigos",

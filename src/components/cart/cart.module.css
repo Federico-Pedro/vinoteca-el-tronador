@@ -199,3 +199,24 @@ input[type="number"] {
 
     font-size: 0.5rem;
 }
+
+
+@media (max-width: 1025px) {
+
+/* //ICONO DE WHATSAPP */
+
+.cart {
+    
+    top: 15%;
+    left: 10%;
+    right: 10%;
+    width: auto;
+    overflow-y: hidden;
+
+}
+
+
+.lastContainer a {
+    
+}
+}

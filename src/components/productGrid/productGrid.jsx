@@ -7,7 +7,7 @@ import Back from '../back/back.jsx'
 import productos from '../../data/productos.json';
 import PriceRangeSlider from '../slider/slider.jsx'
 import { useCart } from "../../context/CartContext.jsx";
-
+import spinner from "../assets/spinner.gif"
 
 function ProductGrid() {
 
@@ -101,7 +101,7 @@ function ProductGrid() {
     if (loading) {
         return (
             <div style={{ textAlign: 'center', padding: '20px', color: 'white' }}>
-                <img src="/public/Spinner@1x-1.0s-200px-200px.gif" alt="spinner" />
+                <img src={spinner} alt="spinner" />
                 <div className="spinner">Cargando productos...</div>
 
             </div>

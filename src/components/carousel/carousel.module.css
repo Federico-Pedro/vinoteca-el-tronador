@@ -64,3 +64,13 @@
 }
 
 
+@media (max-width: 768px) {
+    .container {
+    
+    width: 90vw;
+    margin-top: 30px;
+}
+
+
+
+}

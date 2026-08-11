@@ -63,3 +63,8 @@
   cursor: pointer;
   border: none;
 }
+
+@media (max-width: 768px) {
+    
+
+}

@@ -9,7 +9,7 @@
 .back{
     font-size: 1.5rem;
     font-family: 'unicase', serif;
-    color: var(--light-gray);
+    color: var(--gray);
     transition: all .5s ease-in-out;
 }
 

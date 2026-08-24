@@ -8,6 +8,7 @@
     padding-top: 30px;
 
 }
+
 .filtersContainer {
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +17,9 @@
     margin-bottom: 20px;
 }
 
-.filterButton, .clickedButton {
+.filterButton,
+.clickedButton,
+.addToCartButton {
     width: 200px;
     height: 40px;
     margin: 10px;
@@ -27,11 +30,15 @@
     font-size: 1rem;
     font-weight: bold;
     font-family: 'title', serif;
-    border: none;
+    border: 1px solid var(--gold);
     transition: all .5s ease-in-out;
 }
 
-.filterButton:hover, .clickedButton:hover, .cartButton:hover {
+
+
+.filterButton:hover,
+.clickedButton:hover,
+.cartButton:hover {
     color: var(--text);
     cursor: pointer
 }
@@ -41,16 +48,17 @@
 }
 
 .clickedButton {
-    box-shadow: inset 5px 5px 10px gray, inset -5px -5px 10px lightgray;
+    box-shadow: inset 3px 3px 10px var(--gold), inset -3px -3px 10px var(--gold);
+    color: var(--text)
 }
 
 .counter {
-    color: var(--light-gray)
+    color: var(--gray)
 }
 
 .cardContainer {
     margin: 0;
-    background-color: var(--bg);
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 35px;
@@ -58,20 +66,28 @@
 }
 
 .card {
-    background-color: rgba(26, 26, 26, 0.25);
+    background-color: rgba(26, 26, 26, 0.774);
     width: 400px;
-    height: 565px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 35px;
+    padding: 30px;
+    position: relative
 
 }
 
 .cardTitle {
     font-size: 1.5rem;
-    color: var(--light-gray);
+    color: var(--card-text);
+    font-family: 'unicase', serif
+}
+
+.cardSubTitle {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    color: var(--card-text);
     font-family: 'unicase', serif
 }
 
@@ -84,24 +100,24 @@
 }
 
 .description p {
-    font-size: 1.2rem;
-    color: var(--light-gray);
+    font-size: 1rem;
+    color: var(--card-text);
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
+    margin-bottom: 0;
 
 }
 
 .price {
-    display: flex;
-    justify-content: flex-end;
     font-size: 1.5rem;
-    color: var(--light-gray);
-    font-family: 'unicase', serif
-        /* border: 1px solid yellow */
-
+    color: var(--card-text);
+    font-family: 'unicase', serif;
+    margin: 0;
+    position: absolute;
+    bottom: 75px;
+    right: 50px;
+    
 }
-
-
 
 .card img {
     width: 300px;
@@ -110,10 +126,24 @@
     object-fit: cover
 }
 
-.parograph{
+.addToCartButton{
+    margin-top: 10px;
+    color: var(--light-gray);
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.addToCartButton:hover{
+    color: var(--card-text);
+    cursor: pointer;
+}
+
+.disponible {
     font-size: 1rem;
-    color: var(--light-gray)
-} 
+    color: var(--card-text)
+}
 
 .paginationContainer {
     display: flex;
@@ -186,7 +216,7 @@
 
 @media (max-width: 1025px) {
     .cardContainer {
-        
+
         grid-template-columns: 1fr 1fr;
         gap: 25px;
         margin-top: 20px;
@@ -195,9 +225,9 @@
 
 @media (max-width: 768px) {
     .cardContainer {
-        
+
         grid-template-columns: 1fr;
         gap: 20px;
-        
+
     }
 }

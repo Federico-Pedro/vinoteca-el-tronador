@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from "./header.module.css";
-import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
-
-import logo from '../../assets/logo.png';
+import logo from '../../assets/logo-black.png';
 
 import { useCart } from "../../context/CartContext.jsx";
 import Cart from '../cart/cart.jsx'
@@ -14,7 +11,7 @@ function Header() {
     const { cart, isCartOpen, openCart, closeCart } = useCart();
     
     
-    const navigate = useNavigate()
+    
 
     const cantidadTotalProductos = cart.reduce((acc, item) => acc + item.cantidad, 0);
 

@@ -2,91 +2,44 @@
   {
     "id": 1,
     "categoria": "tinto",
-    "bodega": "Catena Zapata",
-    "nombre": "Malbec Reserva",
-    "precio": 6000,
-    "descripcion": "Vino tinto de la región de Tandil",
-    "imagen": "/cards/001.jpeg",
-    "stock": false
+    "bodega": "Falasco",
+    "nombre": "Hermandad",
+    "uva": "Malbec",
+    "precio": 30500,
+    "descripcion": "Falasco Wines Hermandad Malbec es un vino tinto elaborado con 100% Malbec, de Finca La Puebla - Valle de Uco. Crianza: 12 meses en barricas de roble francés y americano.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_hermandad_malbec.png",
+    "stock": true
   },
   {
     "id": 2,
     "categoria": "tinto",
-    "bodega": "Selentein",
-    "nombre": "Cabernet Sauvignon",
-    "precio": 7200,
-    "descripcion": "El cabernet sauvignon es el vino mas importante producido en francia",
-    "imagen": "/cards/002.jpeg",
+    "bodega": "Falasco",
+    "nombre": "Fausto",
+    "uva": "Malbec",
+    "precio": 14800,
+    "descripcion": "Falasco Wines Fausto Malbec Old Vines 100% Malbec, de Valle de Uco. Viñedos de aprox. 30 años. Su crianza: 12 meses en barricas de roble francés y americano.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_fausto_malbec.png",
     "stock": true
   },
   {
     "id": 3,
-    "categoria": "blanco",
-    "bodega": "Catena Zapata",
-    "nombre": "Sangiovese de San Felipe",
-    "precio": 15200,
-    "descripcion": "Sangiovese es la uva mas producida de blancos en francia",
-    "imagen": "/cards/005.jpeg",
-    "stock": true
-  },
-  {
-    "id": 4,
-    "categoria": "gin",
-    "bodega": "Gin",
-    "nombre": "Bombay",
-    "precio": 35000,
-    "descripcion": "El mejor gin Hindú directo a su mesa",
-    "imagen": "/cards/011.jpeg",
-    "stock": true
-  },
-  {
-    "id": 5,
-    "categoria": "gin",
-    "bodega": "Catena Zapata",
-    "nombre": "Aconcagua",
-    "precio": 26000,
-    "descripcion": "El gin argentino por excelencia, no existe mejor producto nacional que este",
-    "imagen": "/cards/012.jpeg",
-    "stock": true
-  },
-  {
-    "id": 6,
-    "categoria": "whisky",
-    "bodega": "Chivas",
-    "nombre": "Chivas Regal 12 años",
-    "precio": 63250,
-    "descripcion": "El whisky escocés por excelencia, el que tomaba Jamie en outlander",
-    "imagen": "/cards/016.jpeg",
-    "stock": true
-  },
-  {
-    "id": 7,
-    "categoria": "espumante",
-    "bodega": "Catena Zapata",
-    "nombre": "Nicasia",
-    "precio": 15230,
-    "descripcion": "El espumante premium de esta bodega, un blend de uvas que logran un corte demi ses",
-    "imagen": "/cards/005.jpeg",
-    "stock": true
-  },
-  {
-    "id": 8,
     "categoria": "tinto",
-    "bodega": "Catena Zapata",
-    "nombre": "Hermandad",
-    "precio": 8960,
-    "descripcion": "Este blend de tintos logra un vino equilibrado, de buen cuerpo y persistencia en boca",
-    "imagen": "/cards/014.jpeg",
-    "stock": true
-  },
-  {
-    "id": 9,
-    "categoria": "licores",
-    "bodega": "Baileys",
-    "nombre": "Baileys",
-    "precio": 34780,
-    "descripcion": "Para disfrutar de una trago diferente durante el partido de canasta con tus amigos",
-    "imagen": "/cards/003.jpeg",
+    "bodega": "Falasco",
+    "nombre": "Fausto",
+    "uva": "Malbec-Cabernet Franc",
+    "precio": 17900,
+    "descripcion": "Falasco Wines Fausto Malbec-Cabernet Franc 50% Cabernet Franc, 50% Malbec, de Valle de Uco. Su crianza: 12 meses en barricas de roble francés 70% y americano 30%.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_fausto_malbec-cabernetFranc.png",
     "stock": true
   }
 ]
+
+
+
+
+
+
+

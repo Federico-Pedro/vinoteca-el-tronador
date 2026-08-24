@@ -2,6 +2,7 @@
 
 .header {
     overflow: hidden;
+    background-color: var(--bg);
 }
 
 .container {
@@ -32,6 +33,7 @@
     font-size: 3rem;
     font-weight: 500;
     font-style: normal;
+    color: var(--main-title)
 
 }
 

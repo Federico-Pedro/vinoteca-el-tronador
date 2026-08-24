@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import styles from "./navBar.module.css";
-import { useNavigate } from 'react-router-dom'
+
 import { useState } from "react";
 
 
 function NavBar() {
 
-    const navigate = useNavigate()
+    
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (

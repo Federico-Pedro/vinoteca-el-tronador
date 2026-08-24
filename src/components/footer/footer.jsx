@@ -1,5 +1,5 @@
 import styles from './footer.module.css'
-import logoVinoteca from "../../assets/logo.png";
+import logoVinoteca from "../../assets/logo-black.png";
 
 const Footer = () => {
   return (

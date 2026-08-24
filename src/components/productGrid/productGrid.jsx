@@ -1,6 +1,4 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom';
 
 import styles from './productGrid.module.css'
 import Back from '../back/back.jsx'
@@ -11,15 +9,15 @@ import spinner from "../../assets/spinner.gif"
 
 function ProductGrid() {
 
-    const navigate = useNavigate()
+
 
     const productsPerPage = 6;
-    const [randomProducts, setRandomProducts] = useState([]);
+
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
     const [counter, setCounter] = useState(productsPerPage)
     const [activeFilters, setActiveFilters] = useState([]);
-
+    const [alcohol, setAlcohol] = useState(false);
     const [minVal, setMinVal] = useState(2500);
     const [maxVal, setMaxVal] = useState(100000);
 
@@ -42,8 +40,15 @@ function ProductGrid() {
             (p) => p.precio >= minVal && p.precio <= maxVal
         );
 
+        // 3. Filtro sin Alcohol
+        if (alcohol) {
+
+            resultado = resultado.filter((p) => p.sinAlcohol === true);
+        }
+
         return resultado;
-    }, [activeFilters, minVal, maxVal]);
+
+    }, [activeFilters, minVal, maxVal, alcohol]);
 
 
     let cantidadProductos = 0
@@ -51,8 +56,6 @@ function ProductGrid() {
 
 
     //CATEGORIAS DE LOS PRODUCTOS TRAIDAS DEL JSON
-    let categorias = productos.map(producto => producto.categoria)
-    categorias = [...new Set(categorias)]
 
     let bodegas = productos.map(producto => producto.bodega)
     bodegas = [...new Set(bodegas)]
@@ -63,6 +66,7 @@ function ProductGrid() {
         setActiveFilters(prev =>
             prev.includes(filter) ? prev.filter(f => f !== filter) : [...prev, filter]
         )
+        console.log(activeFilters)
 
     }
 
@@ -112,6 +116,12 @@ function ProductGrid() {
         <div className={styles.body}>
 
             <div className={styles.filtersContainer}>
+                <button
+                    className={alcohol ? styles.clickedButton : styles.filterButton}
+                    onClick={() => setAlcohol(!alcohol)}
+                >
+                    SIN ALCOHOL
+                </button>
                 {bodegas.map((cat) => (
                     <button
                         className={activeFilters.includes(cat) ? styles.clickedButton : styles.filterButton}
@@ -120,6 +130,7 @@ function ProductGrid() {
                         {cat.toUpperCase()}
                     </button>
                 ))}
+
             </div>
 
             <PriceRangeSlider
@@ -139,18 +150,19 @@ function ProductGrid() {
                 {currentProducts.map((producto) => (
                     <div key={producto.id} className={styles.card}>
                         <div className={styles.cardTitle}>{producto.nombre} </div>
-                        
-                            <img src={producto.imagen} alt={"Productos destacados"} />
-                        
+                        <div className={styles.cardSubTitle}>{producto.uva} </div>
+
+                        <img src={producto.imagen} alt={"Productos destacados"} />
+
                         <div className={styles.description}>
                             <p>{producto.descripcion}</p>
                             <h3 className={styles.price}>${producto.precio}</h3>
                         </div>
                         <div className={styles.cartButtonContainer}>
                             {producto.stock ?
-                            <button className={styles.filterButton} onClick={() => addToCart(producto)}>
-                                Agregar al carrito
-                            </button> : <p className={styles.parograph}>El producto no se encuentra disponible</p>
+                                <button className={styles.addToCartButton} onClick={() => addToCart(producto)}>
+                                    Agregar al carrito
+                                </button> : <p className={styles.disponible}>El producto no se encuentra disponible</p>
                             }
                         </div>
                     </div>

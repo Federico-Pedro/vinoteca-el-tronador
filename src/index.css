@@ -1,14 +1,14 @@
 :root {
-  --bg: #f0f0f0b6;
+  --bg: #eae6e0;
   --card-text: hsl(0, 0%, 89%);
-  --gray: #141414c7;
+  --gray: #2c2627;
   --light-gray: #929292;
-  --text: #010101;
+  --text: #151618;
   --card: rgba(26, 26, 26, 0.25);
   --shadow:rgba(211, 211, 211, 0.1);
   --gold: #e48f1198;
   --modal: #010101ef;
-  --main-title: #010101;
+  --main-title: #151618;
 
   
 }
@@ -21,7 +21,7 @@ html, body {
   margin: 0;
   height: 100vh;
   overflow-x: hidden;
-  background-image: url('/fondo.JPG');
+  background-image: url('/fondo.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

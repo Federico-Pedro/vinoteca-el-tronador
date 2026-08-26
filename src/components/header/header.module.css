@@ -3,6 +3,8 @@
 .header {
     overflow: hidden;
     background-color: var(--bg);
+    height:fit-content;
+    
 }
 
 .container {
@@ -26,7 +28,7 @@
 
 }
 
-.titleContainer {}
+
 
 .title {
     font-family: 'Cormorant Garamond';

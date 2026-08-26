@@ -23,6 +23,7 @@
 
 .arrows {
     margin-top: 15px;
+    margin-right: 30px;
     display: flex;
     justify-content: flex-end;
 }
@@ -30,13 +31,13 @@
 .arrows i {
     margin: 10px;
     font-size: 1.5rem;
-    color: var(--light-gray);
+    color: var(--bg);
     transition: all .5s ease-in-out;
 }
 
 .arrows i:hover {
     cursor: pointer;
-    color: var(--text)
+    color: var(--card-text)
 }
 
 .dots {

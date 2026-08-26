@@ -13,7 +13,7 @@ function Carousel() {
 
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { loop: true },
-        [Autoplay({ delay: 6000 })]
+        [Autoplay({ delay: 5000 })]
     );
 
     const [indiceActivo, setIndiceActivo] = useState(0);

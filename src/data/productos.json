@@ -9,7 +9,8 @@
     "descripcion": "Falasco Wines Hermandad Malbec es un vino tinto elaborado con 100% Malbec, de Finca La Puebla - Valle de Uco. Crianza: 12 meses en barricas de roble francés y americano.",
     "sinAlcohol": false,
     "imagen": "/cards/falasco_hermandad_malbec.png",
-    "stock": true
+    "stock": true,
+    "desc": 10
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "descripcion": "Falasco Wines Fausto Malbec Old Vines 100% Malbec, de Valle de Uco. Viñedos de aprox. 30 años. Su crianza: 12 meses en barricas de roble francés y americano.",
     "sinAlcohol": false,
     "imagen": "/cards/falasco_fausto_malbec.png",
-    "stock": true
+    "stock": true,
+    "desc": 15
   },
   {
     "id": 3,
@@ -33,13 +35,111 @@
     "descripcion": "Falasco Wines Fausto Malbec-Cabernet Franc 50% Cabernet Franc, 50% Malbec, de Valle de Uco. Su crianza: 12 meses en barricas de roble francés 70% y americano 30%.",
     "sinAlcohol": false,
     "imagen": "/cards/falasco_fausto_malbec-cabernetFranc.png",
-    "stock": true
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 4,
+    "categoria": "tinto",
+    "bodega": "Falasco",
+    "nombre": "Hermandad",
+    "uva": "Blend",
+    "precio": 30500,
+    "descripcion": "Elaborado con 42% Malbec, 25% Cabernet Sauvignon, 20% Petit Verdot, 13% Merlot, Su crianza: 12 meses en barricas de 225 litros de roble francés y americano.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_hermandad_blend.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 5,
+    "categoria": "tinto",
+    "bodega": "Falasco",
+    "nombre": "Ferus",
+    "uva": "Malbec",
+    "precio": 14800,
+    "descripcion": "Falasco Wines Ferus Malbec es un vino tinto elaborado con 100% Malbec, de 100% Valle de Uco, Altamira - Vista Flores. Su crianza: 12 meses parcial en barriles de roble francés y americano.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_ferus_malbec.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 6,
+    "categoria": "tinto",
+    "bodega": "Falasco",
+    "nombre": "Ferus",
+    "uva": "Cabernet Franc",
+    "precio": 14800,
+    "descripcion": "Falasco Wines Ferus Cabernet Franc es un vino tinto elaborado con 100% Cabernet Franc, del Valle de Uco. Fermenta con levaduras indígenas en tanques de acero inoxidable. Crianza de 12 meses en vasijas de concreto, sin paso por roble, para preservar la pureza de la fruta y la expresión del terroir.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_ferus_franc.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 7,
+    "categoria": "tinto",
+    "bodega": "Falasco",
+    "nombre": "Hermandad",
+    "uva": "Merlot",
+    "precio": 30500,
+    "descripcion": " Es un vino tinto elaborado con 100% Merlot, de El Peral - Tupungato; La Consulta - San Carlos; Valle de Uco. Su crianza: 12 meses en barriles de 225 litros de roble francés y americano.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_hermandad_merlot.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 8,
+    "categoria": "blanco",
+    "bodega": "Falasco",
+    "nombre": "Ferus",
+    "uva": "Blanc de blancs",
+    "precio": 14800,
+    "descripcion": "Falasco Wines Ferus Blanc de Blancs es un vino blanco elaborado con 45% Viognier, 25% Semillón, 20% Sauvignon Blanc, 10% Torrontés, de Valle de Uco, Mendoza. Su crianza: 3 meses sobre sus borras con batoneo.",
+    "sinAlcohol": false,
+    "imagen": "/cards/falasco_ferus_blancs.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 9,
+    "categoria": "tinto",
+    "bodega": "Nieto Senetiner",
+    "nombre": "0%",
+    "uva": "Malbec - Pinot Noir",
+    "precio": 15500,
+    "descripcion": "Elaborado de manera tradicional con extracciones suaves. Una parte del vino está en contacto con madera de origen francés. Luego, ingresa en la etapa de desalcoholización mediante la tecnología de conos rotativos.",
+    "sinAlcohol": true,
+    "imagen": "/cards/nieto_0_malbec.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 10,
+    "categoria": "tinto",
+    "bodega": "Kaiken",
+    "nombre": "Estate",
+    "uva": "Malbec",
+    "precio": 13500,
+    "descripcion": "Color rojo intenso con matices púrpura, con aromas florales, notas de frutos rojos maduros y elegantes toques de especias que aumentan su complejidad, todo en un armonioso balance con la madera.",
+    "sinAlcohol": false,
+    "imagen": "/cards/kaiken_estate_malbec.png",
+    "stock": true,
+    "desc": 0
+  },
+  {
+    "id": 11,
+    "categoria": "tinto",
+    "bodega": "Huentala",
+    "nombre": "Gran sombrero",
+    "uva": "Cabernet Franc",
+    "precio": 19500,
+    "descripcion": "De color rojo rubí intenso. Elegante carácter especiado, con sutiles notas a pimiento verde, frutos negros, eucalipto, hierbas frescas y flores, combinadas con aromas de tabaco, regaliz y vainilla, aportados por la crianza en barricas de roble.",
+    "sinAlcohol": false,
+    "imagen": "/cards/huentala_sombrero_franc.png",
+    "stock": true,
+    "desc": 0
   }
 ]
-
-
-
-
-
-
-

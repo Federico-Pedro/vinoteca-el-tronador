@@ -117,7 +117,14 @@
     position: absolute;
     bottom: 75px;
     right: 50px;
+}
 
+.discount {
+    font-size: 1rem;
+    color: var(--disc);
+    font-family: 'unicase', serif;
+    margin-top: 10 px;
+    
 }
 
 .card img {

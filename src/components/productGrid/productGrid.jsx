@@ -156,7 +156,23 @@ function ProductGrid() {
 
                         <div className={styles.description}>
                             <p>{producto.descripcion}</p>
-                            <h3 className={styles.price}>${producto.precio}</h3>
+
+
+                            {producto.desc > 0 ? (
+                                <div>
+                                    <h3 className={styles.price}>
+                                        ${(producto.precio * (1 - producto.desc / 100)).toFixed(2)}
+                                    </h3>
+                                    <small className={styles.discount}>
+                                        <s >${producto.precio}</s> ({producto.desc}% OFF)
+                                    </small>
+                                </div>
+                            ) : (
+                                <h3 className={styles.price}>${producto.precio}</h3>
+                            )}
+
+
+
                         </div>
                         <div className={styles.cartButtonContainer}>
                             {producto.stock ?

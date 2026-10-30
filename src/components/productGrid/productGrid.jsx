@@ -6,13 +6,13 @@ import productos from '../../data/productos.json';
 import PriceRangeSlider from '../slider/slider.jsx'
 import { useCart } from "../../context/CartContext.jsx";
 import spinner from "../../assets/spinner.gif"
-
+import { useNavigate } from "react-router-dom";
 function ProductGrid() {
 
 
 
     const productsPerPage = 6;
-
+    const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
     const [counter, setCounter] = useState(productsPerPage)
@@ -145,6 +145,7 @@ function ProductGrid() {
                 Mostrando {cantidadProductos <= productsPerPage ? cantidadProductos : counter} / {cantidadProductos} productos
             </div>
 
+           {/* CARD */}
 
             <div className={styles.cardContainer}>
                 {currentProducts.map((producto) => (
@@ -152,7 +153,7 @@ function ProductGrid() {
                         <div className={styles.cardTitle}>{producto.nombre} </div>
                         <div className={styles.cardSubTitle}>{producto.uva} </div>
 
-                        <img src={producto.imagen} alt={"Productos destacados"} />
+                        <img src={producto.imagen} alt={"Productos destacados"} onClick={() => navigate(`/producto/${producto.id}`)} />
 
                         <div className={styles.description}>
                             <p>{producto.descripcion}</p>
@@ -161,7 +162,7 @@ function ProductGrid() {
                             {producto.desc > 0 ? (
                                 <div>
                                     <h3 className={styles.price}>
-                                        ${(producto.precio * (1 - producto.desc / 100)).toFixed(2)}
+                                        ${(producto.precio * (1 - producto.desc / 100))}
                                     </h3>
                                     <small className={styles.discount}>
                                         <s >${producto.precio}</s> ({producto.desc}% OFF)

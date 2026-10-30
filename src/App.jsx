@@ -6,6 +6,7 @@ import NavBar from './components/navBar/navBar'
 import Carousel from './components/carousel/carousel'
 import SocialSideBar from './components/socialSideBar/socialSideBar'
 import ProductGrid from './components/productGrid/productGrid'
+import ProductDetail from './components/productDetail/productDetail'
 import Footer from './components/footer/footer'
 import Contact from './components/contact/contact'
 import AboutUs from './components/aboutUs/aboutUs'
@@ -31,7 +32,7 @@ function App() {
         <div id="contenido-rutas">
           <Routes>
             <Route path="/productGrid" element={<ProductGrid />} />
-
+            <Route path="/producto/:id" element={<ProductDetail/>}/>
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/map" element={<Map />} />
             <Route path="/contact" element={<Contact />} />
@@ -43,7 +44,7 @@ function App() {
           <FloatingWhatsApp
             phoneNumber="542494603740"
             accountName="eL TROnaDOR"
-            avatar="src/assets/logo.png"
+            avatar="/src/assets/logo.png"
             statusMessage="Contestamos en 15 minutos"
             chatMessage="Hola! ¿En qué te podemos ayudar?"
           />
